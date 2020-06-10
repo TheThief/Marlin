@@ -47,7 +47,7 @@
 #if ENABLED(BLTOUCH)
   #if MB(GT2560_REV_A_PLUS)
     #define SERVO0_PIN                        11
-    #define Z_MAX_PIN                         32
+    //#define Z_MAX_PIN                         32
   #else
     #define SERVO0_PIN                        32
     #define Z_MAX_PIN                         -1
@@ -101,13 +101,15 @@
 //
 #define SDSS                                  53
 #define LED_PIN                               13
-#define PS_ON_PIN                             12
+#define PS_ON_PIN                             32 // 12
 #define SUICIDE_PIN                           54  // Must be enabled at startup to keep power flowing
 #define KILL_PIN                              -1
 
+#define BEEPER_PIN                            18
+
 #if HAS_WIRED_LCD
 
-  #define BEEPER_PIN                          18
+  //#define BEEPER_PIN                          18
 
   #if IS_NEWPANEL
 
