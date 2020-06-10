@@ -44,7 +44,7 @@
 #define Y_MIN_PIN                             26
 #define Y_MAX_PIN                             28
 #define Z_MIN_PIN                             30
-#define Z_MAX_PIN                             32
+//#define Z_MAX_PIN                             32
 
 //
 // Steppers
@@ -91,13 +91,15 @@
 //
 #define SDSS                                  53
 #define LED_PIN                               13
-#define PS_ON_PIN                             12
+#define PS_ON_PIN                             32 // 12
 #define SUICIDE_PIN                           54  // Must be enabled at startup to keep power flowing
 #define KILL_PIN                              -1
 
+#define BEEPER_PIN                          18
+
 #if HAS_SPI_LCD
 
-  #define BEEPER_PIN                          18
+  //#define BEEPER_PIN                          18
 
   #if ENABLED(NEWPANEL)
 
