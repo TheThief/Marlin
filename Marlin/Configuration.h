@@ -528,9 +528,10 @@
     //#define DEFAULT_Kd 114.00
 
     // CTC MK8 Extruder
-    #define  DEFAULT_Kp 19.86
-    #define  DEFAULT_Ki 1.0
-    #define  DEFAULT_Kd 98.83
+    #define DEFAULT_Kp 18.08
+    #define DEFAULT_Ki 0.85
+    #define DEFAULT_Kd 95.92
+
   #endif
 #endif // PIDTEMP
 
@@ -1248,12 +1249,12 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 190
-#define Y_BED_SIZE 196
+#define X_BED_SIZE 188
+#define Y_BED_SIZE 192
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define Y_MIN_POS -6
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
@@ -1546,8 +1547,8 @@
 #define LEVEL_BED_CORNERS
 
 #if ENABLED(LEVEL_BED_CORNERS)
-  #define LEVEL_CORNERS_INSET_LFRB { 30, 30, 30, 30 } // (mm) Left, Front, Right, Back insets
-  #define LEVEL_CORNERS_HEIGHT      0.0   // (mm) Z height of nozzle at leveling points
+  #define LEVEL_CORNERS_INSET_LFRB { 0, 0, 0, 0 } // (mm) Left, Front, Right, Back insets
+  #define LEVEL_CORNERS_HEIGHT      0.1   // (mm) Z height of nozzle at leveling points
   #define LEVEL_CORNERS_Z_HOP       4.0   // (mm) Z height of nozzle between leveling points
   //#define LEVEL_CENTER_TOO              // Move to the center after the last corner
   //#define LEVEL_CORNERS_USE_PROBE
