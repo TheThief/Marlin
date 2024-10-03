@@ -75,9 +75,15 @@
 #define E0_DIR_PIN                            45
 #define E0_ENABLE_PIN                         41
 
-#define E1_STEP_PIN                           49
-#define E1_DIR_PIN                            47
-#define E1_ENABLE_PIN                         48
+#ifdef Z2_DRIVER_TYPE
+  #define Z2_STEP_PIN                         49
+  #define Z2_DIR_PIN                          47
+  #define Z2_ENABLE_PIN                       48
+#else
+  #define E1_STEP_PIN                         49
+  #define E1_DIR_PIN                          47
+  #define E1_ENABLE_PIN                       48
+#endif
 
 //
 // Temperature Sensors

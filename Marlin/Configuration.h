@@ -1396,7 +1396,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 2, -45.5, -1.55 }
+#define NOZZLE_TO_PROBE_OFFSET { 2.00, -45.50, -2.10 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1596,15 +1596,15 @@
 
 // The size of the printable area
 #define X_BED_SIZE 220
-#define Y_BED_SIZE 150
+#define Y_BED_SIZE 220
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -14
-#define Y_MIN_POS 0
+#define X_MIN_POS -6  // must be less than -NOZZLE_TO_PROBE_OFFSET.X to fully probe bed
+#define Y_MIN_POS 0   // must be less than -NOZZLE_TO_PROBE_OFFSET.Y to fully probe bed
 #define Z_MIN_POS 0
-#define X_MAX_POS 250
-#define Y_MAX_POS 200 // Y_BED_SIZE - NOZZLE_TO_PROBE_OFFSET.Y
-#define Z_MAX_POS 190
+#define X_MAX_POS 228 // must be at least X_BED_SIZE - min(NOZZLE_TO_PROBE_OFFSET.X, 0) to fully probe bed
+#define Y_MAX_POS 280 // must be at least Y_BED_SIZE - min(NOZZLE_TO_PROBE_OFFSET.Y, 0) to fully probe bed
+#define Z_MAX_POS 175
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
@@ -2109,7 +2109,7 @@
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
-  #define NOZZLE_PARK_POINT { (X_MIN_POS + 10), (Y_MAX_POS - 10), 1 }
+  #define NOZZLE_PARK_POINT { (X_MIN_POS + 5), (Y_MAX_POS - 10), 1 }
   #define NOZZLE_PARK_MOVE          0   // Park motion: 0 = XY Move, 1 = X Only, 2 = Y Only, 3 = X before Y, 4 = Y before X
   #define NOZZLE_PARK_Z_RAISE_MIN   1   // (mm) Always raise Z by at least this distance
   #define NOZZLE_PARK_XY_FEEDRATE 100   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
