@@ -1595,15 +1595,15 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 220
-#define Y_BED_SIZE 220
+#define X_BED_SIZE 218
+#define Y_BED_SIZE 218
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -6  // must be less than -NOZZLE_TO_PROBE_OFFSET.X to fully probe bed
-#define Y_MIN_POS 0   // must be less than -NOZZLE_TO_PROBE_OFFSET.Y to fully probe bed
+#define X_MIN_POS -8.0 // must be less than -NOZZLE_TO_PROBE_OFFSET.X to fully probe bed
+#define Y_MIN_POS -0.5 // must be less than -NOZZLE_TO_PROBE_OFFSET.Y to fully probe bed
 #define Z_MIN_POS 0
-#define X_MAX_POS 228 // must be at least X_BED_SIZE - min(NOZZLE_TO_PROBE_OFFSET.X, 0) to fully probe bed
-#define Y_MAX_POS 280 // must be at least Y_BED_SIZE - min(NOZZLE_TO_PROBE_OFFSET.Y, 0) to fully probe bed
+#define X_MAX_POS 226  // must be at least X_BED_SIZE - min(NOZZLE_TO_PROBE_OFFSET.X, 0) to fully probe bed
+#define Y_MAX_POS 270  // must be at least Y_BED_SIZE - min(NOZZLE_TO_PROBE_OFFSET.Y, 0) to fully probe bed
 #define Z_MAX_POS 175
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
